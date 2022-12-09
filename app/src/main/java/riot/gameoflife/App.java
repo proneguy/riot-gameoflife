@@ -1,22 +1,34 @@
 package riot.gameoflife;
 
+import java.util.regex.Pattern;
 import java.util.Scanner;
 import riot.gameoflife.classes.Life;
 
 public class App {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         Life life = new Life();
 
         String line;
         Scanner in = new Scanner(System.in);
 
+        // Regex for permissive formatting in coordinates
+        Pattern pat = Pattern.compile("^\s*\\(\s*-?[0-9]+\s*,\s*-?[0-9]+\s*\\)\s*$");
+
         // Read stdin
         while (in.hasNextLine()) {
             line = in.nextLine();
             
-            // TODO: We should detect & reject input if it it doesn't match (-?\d+, -?\d+) format
+            // Skip blank lines (in particular helpful for trailing line in input file)
+            if (line.trim().length()==0)
+                continue;
+
+            // Exit application if invalid input is detected
+            if (!pat.matcher(line).matches()) {
+                System.out.println("Invalid input");
+                System.exit(1);
+            }
 
             String[] xy = line.split(",");
 
