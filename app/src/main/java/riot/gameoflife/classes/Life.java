@@ -95,7 +95,7 @@ public class Life {
         String string = new String("#Life 1.06");
 
         for (Position position: set) {
-            string = string.concat("\n" + position.toString());
+            string = string.concat(System.lineSeparator() + position.toString());
         }
 
         return string;

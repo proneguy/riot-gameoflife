@@ -13,21 +13,21 @@ public class LifeTest {
     @Test void lifeSingleEntry() {
         Life life = new Life();
         life.addBit(-123L, 456L);
-        assertEquals("#Life 1.06\n-123 456", life.toString());
+        assertEquals("#Life 1.06" + System.lineSeparator() + "-123 456", life.toString());
     }
 
     @Test void lifeDuplicatedEntry() {
         Life life = new Life();
         life.addBit(-123L, 456L);
         life.addBit(-123L, 456L);
-        assertEquals("#Life 1.06\n-123 456", life.toString());
+        assertEquals("#Life 1.06" + System.lineSeparator() + "-123 456", life.toString());
     }
 
     @Test void lifeTwoEntries() {
         Life life = new Life();
         life.addBit(-123L, 456L);
         life.addBit(-123L, 455L);
-        assertEquals("#Life 1.06\n-123 455\n-123 456", life.toString());
+        assertEquals("#Life 1.06" + System.lineSeparator() + "-123 455" + System.lineSeparator() + "-123 456", life.toString());
     }
 
     @Test void lifeEmptyEvolvesToEmpty() {
@@ -57,7 +57,7 @@ public class LifeTest {
         life.addBit(0L, 0L);
         life.addBit(0L, 1L);
         life.evolve();
-        assertEquals("#Life 1.06\n1 0\n-1 0\n0 0", life.toString());
+        assertEquals("#Life 1.06" + System.lineSeparator() + "1 0" + System.lineSeparator() + "-1 0" + System.lineSeparator() + "0 0", life.toString());
     }
 
     @Test void lifeThreeInALineTwiceEvolvesToSameLine() {
@@ -67,7 +67,7 @@ public class LifeTest {
         life.addBit(0L, 1L);
         life.evolve();
         life.evolve();
-        assertEquals("#Life 1.06\n0 -1\n0 0\n0 1", life.toString());
+        assertEquals("#Life 1.06" + System.lineSeparator() + "0 -1" + System.lineSeparator() + "0 0" + System.lineSeparator() + "0 1", life.toString());
     }
 
     @Test void lifeThreeInAnLEvolvesToSquare() {
@@ -76,7 +76,7 @@ public class LifeTest {
         life.addBit(0L, 0L);
         life.addBit(1L, 0L);
         life.evolve();
-        assertEquals("#Life 1.06\n1 -1\n1 0\n0 -1\n0 0", life.toString());
+        assertEquals("#Life 1.06" + System.lineSeparator() + "1 -1" + System.lineSeparator() + "1 0" + System.lineSeparator() + "0 -1" + System.lineSeparator() + "0 0", life.toString());
     }
 
     @Test void lifeSquareEvolvesUnchanged() {
@@ -86,7 +86,7 @@ public class LifeTest {
         life.addBit(1L, 0L);
         life.addBit(1L, -1L);
         life.evolve();
-        assertEquals("#Life 1.06\n1 -1\n1 0\n0 -1\n0 0", life.toString());
+        assertEquals("#Life 1.06" + System.lineSeparator() + "1 -1" + System.lineSeparator() + "1 0" + System.lineSeparator() + "0 -1" + System.lineSeparator() + "0 0", life.toString());
     }
 
     @Test void lifeSixAliveOvalEvolvesUnchanged() {
@@ -98,7 +98,7 @@ public class LifeTest {
         life.addBit(1L, 2L);
         life.addBit(0L, 3L);
         life.evolve();
-        assertEquals("#Life 1.06\n0 0\n1 1\n-1 1\n1 2\n-1 2\n0 3", life.toString());
+        assertEquals("#Life 1.06" + System.lineSeparator() + "0 0" + System.lineSeparator() + "1 1" + System.lineSeparator() + "-1 1" + System.lineSeparator() + "1 2" + System.lineSeparator() + "-1 2" + System.lineSeparator() + "0 3", life.toString());
     }
 
 }
