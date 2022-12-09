@@ -31,9 +31,9 @@ public class Position {
         return new String(String.valueOf(x) + " " + String.valueOf(y));
     }
 
-    // Our solution will be using a HashMap of Position to bit
+    // Our solution will be using a HashSet of Position for live cells
     // To accomplish this, Position must override equals and hashCode for 
-    //   HashMap to be able to use it properly
+    //   HashSet to be able to use it properly
     @Override
     public boolean equals (Object o) {
 
