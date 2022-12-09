@@ -57,7 +57,6 @@ public class Life {
         } else {
             return false;
         }
-
     }
 
     // Execute the Game of Life logic against our cells
@@ -109,7 +108,5 @@ public class Life {
         for (Position position: set) {
             System.out.println(position.toString());
         }
-
     }
-
 }

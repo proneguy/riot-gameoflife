@@ -49,7 +49,6 @@ public class LifeTest {
         life.addBit(0L, 1L);
         life.evolve();
         assertEquals("#Life 1.06", life.toString());
-
     }
 
     @Test void lifeThreeInALineEvolvesToRotatedLine() {

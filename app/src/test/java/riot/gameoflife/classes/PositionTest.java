@@ -51,7 +51,4 @@ public class PositionTest {
         Position position2 = new Position(1234L, 5678L);
         assertTrue(position1.equals(position2));
     }
-    
-
-
 }
