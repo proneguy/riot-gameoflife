@@ -23,14 +23,14 @@ Two input files are provided in /samplefiles
 
 Input files should be of format:
 
-(0, 0)
-(0, -1)
-(0, 1)   
-(-9223372036854775808, -9223372036854775808)
+(0, 0)  
+(0, -1)  
+(0, 1)  
+(-9223372036854775808, -9223372036854775808)  
 
 Output will be in Life 1.06 format:
 
-#Life 1.06
-0 -1
-0 0
+#Life 1.06  
+0 -1  
+0 0  
 0 1
